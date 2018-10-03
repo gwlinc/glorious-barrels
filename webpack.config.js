@@ -1,54 +1,28 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const srcFolder = path.join(__dirname, '/client/src/');
+const SRC_DIR = path.join(__dirname, '/client/src');
+const DIST_DIR = path.join(__dirname, '/public');
 
 module.exports = {
+  mode: 'development',
   entry: {
-    main: [path.join(srcFolder, '/js/index.jsx')],
+    client: `${SRC_DIR}/index.jsx`,
   },
-  resolve: { extensions: ['.js', '.jsx'] },
   output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: '[name].js',
+    path: DIST_DIR,
+    filename: 'client-bundle.js',
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
+        test: /\.jsx?/,
+        include: SRC_DIR,
         use: ['babel-loader', 'eslint-loader'],
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: { minimize: true },
-          },
-        ],
-      },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(srcFolder, '/index.html'),
-      filename: './index.html',
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
-  ],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  devtool: 'cheap-eval-source-map',
 };
