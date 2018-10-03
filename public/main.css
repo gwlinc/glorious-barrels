@@ -1,0 +1,26 @@
+body {
+  padding: 20px;
+  font-family: Helvetica;
+  background-color: #20262e;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+}
+
+.box {
+  background-color: #fff;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.menu {
+  grid-column: auto / span 1;
+}
+.logo {
+  grid-column: auto / span 2;
+}
+.search {
+  grid-column: auto / span 2;
+}
