@@ -11,11 +11,8 @@ class App extends React.Component {
     return (
       <div id="nav-bar">
         <div className="wrapper">
-          <div className="menu box">
-            Menu
-            {/* <Menu /> */}
-          </div>
-          <div className="logo box">Logo</div>
+          <div className="logo box"><img src="Goldenwest-Logo.png" alt="goldenWest logo" />
+</div>
           <div className="search box">
             Search
             {/* <Search /> */}
