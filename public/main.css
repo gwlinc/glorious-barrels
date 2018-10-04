@@ -32,3 +32,29 @@ img {
   width: 100%;
   height: 100%;
 }
+
+.slick-prev:before {
+  color:black !important;
+}
+
+.slick-next:before {
+  color:black !important;
+}
+
+.slick-slider {
+  padding-top: 15px;
+}
+
+.smallbox li {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 20px;
+  font-size: 14px;
+  min-height:320px;
+}
+
+.smallbox ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-gap: 10px;
+}
