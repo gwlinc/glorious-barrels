@@ -22,12 +22,12 @@ class App extends React.Component {
           </div>
         </div>
       </div>
-      <div>
+      <div className="mainImg">
         <Carousel></Carousel>
       </div>
       <div className="smallbox">
-        <ul>
-          <li>
+        <div className="articles">
+          <div className="article">
             <img src="gwlinc1.jpg" alt="Cutting" />
           <h1>
           Titles that will blow your mind
@@ -35,8 +35,8 @@ class App extends React.Component {
           <h2>
             Descriptions of the current stuff 
           </h2>
-          </li>
-          <li> 
+          </div>
+          <div className="article"> 
           <img src="gwlinc1.jpg" alt="Cutting" />  
             <h1>
             Titles that will blow your mind
@@ -44,8 +44,8 @@ class App extends React.Component {
             <h2>
               Descriptions of the current stuff 
             </h2>
-            </li>
-          <li>
+            </div>
+            <div className="article">
           <img src="gwlinc1.jpg" alt="Cutting" />
           <h1>
             Titles that will blow your mind
@@ -53,8 +53,8 @@ class App extends React.Component {
           <h2>
             Descriptions of the current stuff 
           </h2>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
 
     
