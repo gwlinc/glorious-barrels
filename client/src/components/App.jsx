@@ -1,15 +1,30 @@
 import React from 'react';
 import Carousel from './Carousel'
-
+import AboutUs from './About'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      page:null
     };
+    this.handlePage = this.handlePage.bind(this)
+  }
+  
+  handlePage(e) {
+    this.setState({page: e})
   }
 
   render() {
+    const page = this.state.page;
+    let viewport;
+
+    if (page === null) {
+      viewport = <Carousel></Carousel>
+    } else {
+      viewport = <AboutUs></AboutUs>
+    }
+
     return (
       <div>
       <div id="nav-bar">
@@ -23,17 +38,17 @@ class App extends React.Component {
         </div>
       </div>
       <div className="mainImg">
-        <Carousel></Carousel>
+        {viewport}
       </div>
       <div className="smallbox">
         <div className="articles">
           <div className="article">
-            <img src="gwlinc1.jpg" alt="Cutting" />
+            <img src="gwlinc+prolong.jpg" alt="Cutting" />
           <h1>
-          Titles that will blow your mind
+          About Us
           </h1>
           <h2>
-            Descriptions of the current stuff 
+            Descriptions of GoldenWest 
           </h2>
           </div>
           <div className="article"> 
@@ -55,6 +70,7 @@ class App extends React.Component {
           </h2>
           </div>
         </div>
+
       </div>
 
     
