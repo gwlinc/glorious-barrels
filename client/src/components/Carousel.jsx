@@ -1,8 +1,8 @@
 import React from 'react';
 import Slider from 'react-slick';
 
-const Carousel = (props) => {
-    var settings = {
+function Carousel() {
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -32,6 +32,6 @@ const Carousel = (props) => {
       </div>
     </Slider>
   );
-};
+}
 
 export default Carousel;

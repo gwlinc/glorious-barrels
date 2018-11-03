@@ -26,6 +26,20 @@ body {
   padding: 20px;
 }
 
+.navBar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  list-style-type: none;
+}
+
+button {
+  color: white;
+  background-color: #043613;
+  border-radius: 3px;
+  padding: 20px;
+  font-size: 16px;
+}
+
 img {
   padding-top: 0;
   display: block;
