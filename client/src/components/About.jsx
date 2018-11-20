@@ -6,9 +6,12 @@ const AboutUs = (props) => {
       <h1>
         Southern California's Premium Wholesale Lubricant Provider
       </h1>
-      <img src="gwlinc+prolong.jpg"></img>
-      <p>
-      Situated in the heart of the Los Angeles metropolitan area, Goldenwest Lubricants Inc. has been supplying the valley with high quality lubricants for [INSERT HOW LONG GWLINC HAS EXISTED]. With our extensive catalogue of premium lubricants, GoldenWest is the one stop shop for all your lubricant needs. 
+        
+      <img src="gwlinc+prolong.jpg" alt="GoldenWest Pomona"></img>
+
+      <p className="figCaption">
+      Situated in the heart of the Los Angeles metropolitan area, Goldenwest Lubricants Inc. has been supplying the valley with high quality lubricants for [INSERT HOW LONG GWLINC HAS EXISTED]. With our extensive catalogue of premium lubricants, GoldenWest is the one stop shop for all your lubricant needs.
+       
       </p>
 
       <h2>

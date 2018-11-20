@@ -83,4 +83,27 @@ img {
     font-family: 'Lato', sans-serif;
 }
 
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 48px;
+  max-width: 100%;
+  padding-bottom: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  text-align: left;
+  color: rgb(2, 48, 2);
+}
 
+h2 {
+  font-family: 'Lobster', cursive;
+
+}
+
+.figCaption {
+  font-size: 1.25em;
+  font-style: italic;
+  text-align: center;
+}
