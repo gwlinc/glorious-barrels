@@ -1,4 +1,6 @@
 import React from 'react';
+import * as Sentry from '@sentry/browser';
+import config from '../../../config';
 import About from './About';
 import Contact from './Contact';
 import Home from './Home';
@@ -6,6 +8,11 @@ import LineCard from './LineCard';
 import NavBar from './NavBar';
 import Sales from './Sales';
 import Store from './Store';
+
+
+Sentry.init({
+  dsn: config.reactdsn,
+});
 
 class App extends React.Component {
   constructor(props) {
@@ -17,10 +24,15 @@ class App extends React.Component {
   }
 
   handlePage(e) {
-    this.setState({ page: e.target.className });
+    this.setState({ page: e.target.id });
   }
 
   render() {
+    try {
+      console.log(this.doesntExist.heyo);
+    } catch (err) {
+      Sentry.captureException(err);
+    }
     const { page } = this.state;
     let mainContent = <Home />;
 
