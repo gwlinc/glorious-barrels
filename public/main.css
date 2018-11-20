@@ -37,7 +37,9 @@ button {
   background-color: #043613;
   border-radius: 3px;
   padding: 20px;
-  font-size: 16px;
+  font-size: 2em;
+  font-family: 'Lato', sans-serif;
+  
 }
 
 img {
@@ -70,13 +72,15 @@ img {
   padding: 20px;
   font-size: 14px;
   min-height:320px;
+  font-family: 'Lato', sans-serif;
 }
 
 .articles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     grid-gap: 10px;
-    list-style-type:none
+    list-style-type:none;
+    font-family: 'Lato', sans-serif;
 }
 
 
