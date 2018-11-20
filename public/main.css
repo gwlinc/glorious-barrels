@@ -32,9 +32,9 @@ body {
   list-style-type: none;
 }
 
-button {
+.navBar-button {
   color: white;
-  background-color: #043613;
+  background-color: #054715;
   border-radius: 3px;
   padding: 20px;
   font-size: 16px;
