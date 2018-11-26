@@ -19,12 +19,28 @@ class App extends React.Component {
     super(props);
     this.state = {
       page: null,
+      active: false,
+      menu: true,
     };
     this.handlePage = this.handlePage.bind(this);
+    this.showMenu = this.showMenu.bind(this);
+    this.toggleClass = this.toggleClass.bind(this);
   }
 
   handlePage(e) {
     this.setState({ page: e.target.id });
+  }
+
+  showMenu() {
+    console.log('workingmenu')
+    const currentState = this.state.menu;
+    this.setState({ menu: !currentState });
+  }
+
+  toggleClass(e) {
+    console.log('e.target.id')
+    const currentState = this.state.active;
+    this.setState({ active: !currentState });
   }
 
   render() {
@@ -53,20 +69,25 @@ class App extends React.Component {
     }
     return (
       <div>
-        <div id="header">
+        {/* <div id="header">
           <div className="wrapper">
             <div className="logo box">
               <img src="Goldenwest-Logo.png" alt="goldenWest logo" />
             </div>
             <div className="search box">
-              Search
+              Search */}
               {/* <Search /> */}
-            </div>
+            {/* </div>
           </div>
-        </div>
-        <div>
-          <NavBar handlePage={this.handlePage} />
-        </div>
+        </div> */}
+        <section className="navigation">
+          <div className="nav-container">
+            <div className="brand">
+              <a href="#!"><img id="logo" src="gw-logo-website.png" /></a>
+            </div>
+            <NavBar active={this.state.active} handlePage={this.handlePage} menu={this.state.menu} showMenu={this.showMenu} toggleClass={this.toggleClass} />
+          </div>
+        </section>
         <div>
           { mainContent }
         </div>
