@@ -1,6 +1,4 @@
 import React from 'react';
-import * as Sentry from '@sentry/browser';
-import config from '../../../config';
 import About from './About';
 import Contact from './Contact';
 import Home from './Home';
@@ -8,11 +6,6 @@ import LineCard from './LineCard';
 import NavBar from './NavBar';
 import Sales from './Sales';
 import Store from './Store';
-
-
-Sentry.init({
-  dsn: config.reactdsn,
-});
 
 class App extends React.Component {
   constructor(props) {
@@ -32,25 +25,19 @@ class App extends React.Component {
   }
 
   showMenu() {
-    console.log('workingmenu')
     const currentState = this.state.menu;
     this.setState({ menu: !currentState });
   }
 
-  toggleClass(e) {
-    console.log('e.target.id')
+  toggleClass() {
     const currentState = this.state.active;
     this.setState({ active: !currentState });
   }
 
+
   render() {
-    try {
-      console.log(this.doesntExist.heyo);
-    } catch (err) {
-      Sentry.captureException(err);
-    }
     const { page } = this.state;
-    let mainContent = <Home />;
+    let mainContent = <Home menu={this.state.menu} />;
 
     if (page === 'about') {
       mainContent = <About />;
@@ -69,17 +56,6 @@ class App extends React.Component {
     }
     return (
       <div>
-        {/* <div id="header">
-          <div className="wrapper">
-            <div className="logo box">
-              <img src="Goldenwest-Logo.png" alt="goldenWest logo" />
-            </div>
-            <div className="search box">
-              Search */}
-              {/* <Search /> */}
-            {/* </div>
-          </div>
-        </div> */}
         <section className="navigation">
           <div className="nav-container">
             <div className="brand">
@@ -88,7 +64,7 @@ class App extends React.Component {
             <NavBar active={this.state.active} handlePage={this.handlePage} menu={this.state.menu} showMenu={this.showMenu} toggleClass={this.toggleClass} />
           </div>
         </section>
-        <div>
+        <div className="cuck">
           { mainContent }
         </div>
       </div>
