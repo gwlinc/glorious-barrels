@@ -10,6 +10,11 @@ body {
   width: 100%;
 }
 
+.navigation {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 nav {
   float: right;
 }
@@ -33,6 +38,7 @@ nav ul li a {
 nav ul li a:hover {
   background: #EBB739;
   color: white;
+  cursor: pointer;
 }
 
 .nav-mobile {
@@ -149,7 +155,7 @@ nav ul li a:hover {
 
 .slick-slider {
   padding-top: 15px;
-  max-width: 80%;
+  max-width: 60%;
   min-width:180px;
   margin: auto;
 }
