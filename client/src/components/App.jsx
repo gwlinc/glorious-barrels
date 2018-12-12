@@ -5,7 +5,7 @@ import Home from './Home';
 import LineCard from './LineCard';
 import NavBar from './NavBar';
 import Sales from './Sales';
-import Store from './Store';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -36,6 +36,10 @@ class App extends React.Component {
 
 
   render() {
+    var iconStyle = {
+      height:'32px',
+    }
+
     const { page } = this.state;
     let mainContent = <Home menu={this.state.menu} />;
 
@@ -51,9 +55,6 @@ class App extends React.Component {
     if (page === 'sales') {
       mainContent = <Sales />;
     }
-    if (page === 'store') {
-      mainContent = <Store />;
-    }
     return (
       <div>
         <section className="navigation">
@@ -64,7 +65,7 @@ class App extends React.Component {
             <NavBar active={this.state.active} handlePage={this.handlePage} menu={this.state.menu} showMenu={this.showMenu} toggleClass={this.toggleClass} />
           </div>
         </section>
-        <div className="cuck">
+        <div>
           { mainContent }
         </div>
       </div>

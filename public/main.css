@@ -130,24 +130,14 @@ nav ul li a:hover {
 .brand {
   position: absolute;
   float: left;
-  max-width: 190px;
-  padding: 20px 0 0 20px;
+  max-width: 250px;
+  /* padding: 20px 0 0 20px; */
 }
 .brand a,
 .brand a:visited {
   color: white;
   text-decoration: none;
 }
-
-
-img {
-  padding-top: 0;
-  display: block;
-  min-width:140px;
-  min-height:28px;
-  width: 100%;
-  height: 100%;
-} */
 
 .slick-prev:before {
   color:black !important;
@@ -179,4 +169,29 @@ img {
   grid-gap: 10px;
   list-style-type:none;
   font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 48px;
+  max-width: 100%;
+  padding-bottom: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  text-align: left;
+  color: rgb(2, 48, 2);
+}
+
+h2 {
+  font-family: 'Lobster', cursive;
+
+}
+
+.figCaption {
+  font-size: 1.25em;
+  font-style: italic;
+  text-align: center;
 }
