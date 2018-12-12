@@ -3,7 +3,15 @@ import React from 'react';
 const AboutUs = (props) => {
   var mainImgStyle = {
     maxwidth: '850px',
+    display:'block',
+    margin:'0 auto'
   }
+  
+  var headerStyle = {
+    textAlign:"center",
+  }
+
+
   return (
     <div>
       <h1>
@@ -17,13 +25,13 @@ const AboutUs = (props) => {
        
       </p>
 
-      <h2>
+      <h2 style={headerStyle}>
       In a Pinch? 2 Day Delivery Guaranteed!
       </h2>
       <p>
       On top of our 2 day guarantee on deliveries in the greater Los Angeles County, GoldenWest strives to meet your every need. With our large fleet of dedicated drivers, we can often deliver same day if you call us up!
       </p>
-      <h2>
+      <h2 style={headerStyle}>
       Customer Service Is Our Priority
       </h2>
       <p>
