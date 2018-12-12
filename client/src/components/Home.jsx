@@ -13,7 +13,7 @@ function Home(props) {
 
 
   let style;
-  if (!props.menu) {
+  if (props.active && !props.menu) {
     style = { paddingTop: 300 };
   }
   return (

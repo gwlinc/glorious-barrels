@@ -18,6 +18,11 @@ class App extends React.Component {
     this.handlePage = this.handlePage.bind(this);
     this.showMenu = this.showMenu.bind(this);
     this.toggleClass = this.toggleClass.bind(this);
+    this.updateClass = this.updateClass.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.updateClass);
   }
 
   handlePage(e) {
@@ -34,6 +39,15 @@ class App extends React.Component {
     this.setState({ active: !currentState });
   }
 
+  updateClass() {
+    const currentState = this.state.active;
+    if (currentState === true && window.innerWidth > 799) {
+      this.setState({ active: false });
+    } else if (currentState === false && window.innerWidth <= 799) {
+      this.setState({ menu: true });
+    }
+  }
+
 
   render() {
     var iconStyle = {
@@ -41,7 +55,7 @@ class App extends React.Component {
     }
 
     const { page } = this.state;
-    let mainContent = <Home menu={this.state.menu} />;
+    let mainContent = <Home menu={this.state.menu} active={this.state.active} />;
 
     if (page === 'about') {
       mainContent = <About />;
