@@ -18,7 +18,7 @@ function NavBar(props) {
           <li><a id="line" onClick={e => {props.handlePage(e); props.showMenu(e); props.toggleClass(e)}}>Line Card</a></li>
           <li><a id="contact" onClick={e => {props.handlePage(e); props.showMenu(e); props.toggleClass(e)}}>Contact</a></li>
           <li><a id="sales" onClick={e => {props.handlePage(e); props.showMenu(e); props.toggleClass(e)}}>Sales</a></li>
-          <li><a id="store" onClick={e => {props.handlePage(e); props.showMenu(e); props.toggleClass(e)}}>Store</a></li>
+          <li><a id="store" href="http://www.gwlinc.com/eStore/default.aspx">Store</a></li>
         </ul>
       </nav>
     );
@@ -39,7 +39,7 @@ function NavBar(props) {
           <li><a id="line" onClick={e => props.handlePage(e)}>Line Card</a></li>
           <li><a id="contact" onClick={e => props.handlePage(e)}>Contact</a></li>
           <li><a id="sales" onClick={e => props.handlePage(e)}>Sales</a></li>
-          <li><a id="store" onClick={e => props.handlePage(e)}>Store</a></li>
+          <li><a id="store" href="http://www.gwlinc.com/eStore/default.aspx">Store</a></li>
         </ul>
       </nav>
     )
