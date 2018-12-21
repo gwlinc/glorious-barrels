@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import About from './About';
 import Contact from './Contact';
 import Home from './Home';
@@ -11,11 +12,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: null,
       active: false,
       menu: true,
     };
-    this.handlePage = this.handlePage.bind(this);
     this.showMenu = this.showMenu.bind(this);
     this.toggleClass = this.toggleClass.bind(this);
     this.updateClass = this.updateClass.bind(this);
@@ -23,10 +22,6 @@ class App extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.updateClass);
-  }
-
-  handlePage(e) {
-    this.setState({ page: e.target.id });
   }
 
   showMenu() {
@@ -50,25 +45,6 @@ class App extends React.Component {
 
 
   render() {
-    var iconStyle = {
-      height:'32px',
-    }
-
-    const { page } = this.state;
-    let mainContent = <Home menu={this.state.menu} active={this.state.active} />;
-
-    if (page === 'about') {
-      mainContent = <About />;
-    }
-    if (page === 'line') {
-      mainContent = <LineCard />;
-    }
-    if (page === 'contact') {
-      mainContent = <Contact />;
-    }
-    if (page === 'sales') {
-      mainContent = <Sales />;
-    }
     return (
       <div>
         <section className="navigation">
@@ -79,9 +55,17 @@ class App extends React.Component {
             <NavBar active={this.state.active} handlePage={this.handlePage} menu={this.state.menu} showMenu={this.showMenu} toggleClass={this.toggleClass} />
           </div>
         </section>
-        <div>
-          { mainContent }
-        </div>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <Home active={this.state.active} menu={this.state.menu} />}
+          />
+          <Route exact path="/about/" component={About} />
+          <Route exact path="/linecard/" component={LineCard} />
+          <Route exact path="/contact/" component={Contact} />
+          <Route exact path="/sales/" component={Sales} />
+        </Switch>
       </div>
     );
   }
