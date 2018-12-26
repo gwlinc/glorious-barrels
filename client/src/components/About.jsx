@@ -9,6 +9,11 @@ const AboutUs = (props) => {
   
   var headerStyle = {
     textAlign:"center",
+    fontFamily: 'Lobster'
+  }
+
+  var h2Style = {
+    fontFamily: 'Lobster',
   }
 
 

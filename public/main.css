@@ -36,11 +36,13 @@ nav ul li {
 }
 nav ul li a {
   display: block;
-  padding: 0 20px;
+  padding: 0 10px;
   line-height: 70px;
   background: #054715;
   color: white;
   text-decoration: none;
+  font-size: 1.25em;
+  font-weight: 900;
 }
 nav ul li a:hover {
   background: #EBB739;
@@ -98,7 +100,7 @@ nav ul li a:hover {
   transform: rotate(-45deg);
 }
 
-@media only screen and (max-width: 799px) {
+@media only screen and (max-width: 890px) {
   .nav-mobile {
     display: block;
   }
@@ -125,7 +127,7 @@ nav ul li a:hover {
   }
 }
 
-@media screen and (min-width: 799px) {
+@media screen and (min-width: 890px) {
   .nav-list {
     display: block !important;
   }
@@ -143,8 +145,9 @@ nav ul li a:hover {
 .brand {
   position: absolute;
   float: left;
-  max-width: 250px;
-  /* padding: 20px 0 0 20px; */
+  max-width: 350px;
+  width:65%;
+  
 }
 .brand a,
 .brand a:visited {
@@ -197,11 +200,11 @@ h1 {
   text-align: left;
   color: rgb(2, 48, 2);
 }
-
+/* 
 h2 {
   font-family: 'Lobster', cursive;
 
-}
+} */
 
 .figCaption {
   font-size: 1.25em;
@@ -368,7 +371,7 @@ h2 {
 
 /* If you don't want the footer to be responsive, remove these media queries */
 
-@media (max-width: 799px) {
+@media (max-width: 890px) {
 
 	.footer-distributed{
 		font: bold 14px sans-serif;
